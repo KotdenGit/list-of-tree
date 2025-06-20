@@ -1,1 +1,11 @@
 <p>tree-view works!</p>
+<ul>
+  <li>
+    {{ treeData.name }}
+    <ul *ngIf="treeData.children">
+      <ng-container *ngFor="let child of treeData.children">
+        <app-tree-view [treeData]="child"></app-tree-view>
+      </ng-container>
+    </ul>
+  </li>
+</ul>
